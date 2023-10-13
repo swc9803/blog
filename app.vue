@@ -1,5 +1,13 @@
 <template>
   <div>
-    <p>test</p>
+    <nuxt-link to="/">home</nuxt-link>
+    <nuxt-link to="/test">test</nuxt-link>
+    <NuxtPage />
   </div>
 </template>
+
+<script setup>
+onMounted(() => {
+  console.log("mount");
+});
+</script>
