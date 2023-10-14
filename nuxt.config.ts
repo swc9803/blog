@@ -1,8 +1,15 @@
 export default defineNuxtConfig({
   css: ["~/assets/css/main.scss"],
   modules: ["@pinia/nuxt"],
+  app: {
+    head: {
+      charset: "utf-8",
+      title: "Test",
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    },
+  },
   runtimeConfig: {
-    firebaseConfig: {
+    public: {
       apiKey: process.env.FIREBASE_API_KEY,
       authDomain: process.env.FIREBASE_AUTH_DOMAIN,
       projectId: process.env.FIREBASE_PROJECT_ID,

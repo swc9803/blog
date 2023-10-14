@@ -1,12 +1,13 @@
 <template>
-  <div>home</div>
+  <div class="home">home</div>
 </template>
 
 <script setup>
 const config = useRuntimeConfig();
 
 onMounted(() => {
-  console.log(config.public.stagingUri);
+  console.log(config.public.apiKey);
+  // console.log(config.firebaseConfig.apiKey);
 });
 </script>
 
