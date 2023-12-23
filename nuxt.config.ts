@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  ssr: false,
   css: ["~/assets/css/main.scss"],
   modules: ["@pinia/nuxt"],
   app: {
@@ -8,7 +9,6 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
   },
-  ssr: false,
   experimental: {
     viewTransition: true,
   },
