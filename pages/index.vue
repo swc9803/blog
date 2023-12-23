@@ -35,7 +35,7 @@ const { data: articles } = useFetch("/articles.json", {
   gap: 24px;
   max-width: 600px;
 }
-.card .card_emoji {
+.card.active .card_emoji {
   view-transition-name: article-emoji;
 }
 .card {
