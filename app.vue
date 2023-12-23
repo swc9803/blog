@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <nuxt-link to="/">home</nuxt-link>
-    <nuxt-link to="/test">test</nuxt-link>
+  <NuxtLayout>
     <NuxtPage />
-  </div>
+  </NuxtLayout>
 </template>
-
-<script setup></script>
