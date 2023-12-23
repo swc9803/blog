@@ -2,21 +2,24 @@
   <div>
     <h1>TOP</h1>
     <div class="articles">
-      <NuxtLink to="/blog/1" class="card">
-        <span class="card_emoji">🐶</span>
-        <span class="card_title">글1</span>
-      </NuxtLink>
-      <NuxtLink to="/blog/2" class="card">
-        <span class="card_emoji">🐱</span>
-        <span class="card_title">글2</span>
-      </NuxtLink>
-      <NuxtLink to="/blog/3" class="card">
-        <span class="card_emoji">🐮</span>
-        <span class="card_title">글3</span>
+      <NuxtLink
+        v-for="article in articles"
+        :key="article.id"
+        :to="`/blog/${article.id}`"
+        class="card"
+      >
+        <span class="card_emoji">{{ article.emoji }}</span>
+        <span class="card_title">{{ article.title }}</span>
       </NuxtLink>
     </div>
   </div>
 </template>
+
+<script setup>
+const { data: articles } = useFetch("/articles.json", {
+  transform: (data) => data.articles,
+});
+</script>
 
 <style lang="scss" scoped>
 .articles {
@@ -25,6 +28,9 @@
   justify-content: center;
   gap: 24px;
   max-width: 600px;
+  .card .card_emoji {
+    view-transition-name: article-emoji;
+  }
   .card {
     width: 100%;
     display: flex;

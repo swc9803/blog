@@ -16,6 +16,12 @@
 const { params } = useRoute();
 const id = Number(params.id);
 
+const { data: article } = useFetch("/articles.json", {
+  transform: (data) => {
+    return data.articles.find((article) => article.id === id);
+  },
+});
+
 definePageMeta({
   validate: (route) => {
     const id = route.params.id;
@@ -32,6 +38,7 @@ definePageMeta({
   .article_emoji {
     font-size: 400px;
     text-align: center;
+    view-transition-name: article-emoji;
   }
   .article_title {
     font-size: 40px;
