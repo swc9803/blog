@@ -7,7 +7,6 @@ const config = useRuntimeConfig();
 
 onMounted(() => {
   console.log(config.public.apiKey);
-  // console.log(config.firebaseConfig.apiKey);
 });
 </script>
 

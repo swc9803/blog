@@ -5,13 +5,7 @@
 </template>
 
 <script setup>
-const firestore = inject("firestore");
 
-const test = firestore.collection("users");
-
-onMounted(() => {
-  console.log(test);
-});
 </script>
 
 <style lang="scss" scoped></style>

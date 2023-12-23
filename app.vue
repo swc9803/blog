@@ -6,8 +6,4 @@
   </div>
 </template>
 
-<script setup>
-onMounted(() => {
-  console.log("mount");
-});
-</script>
+<script setup></script>
